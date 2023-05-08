@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing Caesar Dressing');
+body{
+	background-image: url(../img/bg1.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
+	height: 100%; 
+	color: #713721;
+	font-family: Caesar Dressing;
+}
+
+#title{
+	font-size: 80px;
+	margin: 0;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	
+	-webkit-animation: moving 1.5s;
+}
+
+@-webkit-keyframes moving {
+    from {top: 0px;}
+    to {top: 15%;}
+}
+
+#wrapper{
+	margin: 0;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0.95;
+	width: 670px;
+	height: 500px;
+}
+
+#main{
+	position: absolute;
+	float: left;
+	border: solid 4px;
+	border-color: rgba(113, 55, 33, 0.9);
+	background-color: rgba(247, 235, 204, 0.8);
+}
+
+#side{
+	position: relative;
+	border: solid 4px;
+	border-color: rgba(113, 55, 33, 0.9);;
+	background-color: rgba(247, 235, 204, 0.8);
+	float: right;
+	width: 150px;
+	height: 500px;
+}
+
+#menu{
+	width: 662px;
+	height: 500px;
+	background-color: rgba(247, 235, 204, 0.8);
+	position: absolute;
+	border: solid 4px;
+	border-color: rgba(113, 55, 33, 0.9);;
+}
+
+#easyb, #mediumb, #hardb{
+	margin: 0;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	
+	font-family: Caesar Dressing;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	
+	background-color:#713721;
+	border: solid 2px #713721;
+	padding: 10px 28px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#easyb:hover, #mediumb:hover, #hardb:hover{
+	color: #713721;
+	background-color: white;
+	font-weight: bold;
+}
+
+
+#menu1, #menu2, #menu3{
+	margin: 0;
+	position: absolute;
+	top: 85%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	
+	font-family: Caesar Dressing;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	
+	background-color:#713721 ;
+	border: solid 2px #713721;
+	padding: 10px 28px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#menu1:hover,#menu2:hover, #menu3:hover{
+	color: #713721;
+	background-color: white;
+	font-weight: bold;
+}
+
+#easy, #medium, #hard{
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: Caesar Dressing;
+	font-size: 23px;
+}
+
+#select{
+	margin: 0;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: Caesar Dressing;
+	font-size: 40px;
+	color: #713721;
+}
+
+#easy{
+	left: 25%;
+}
+
+#medium{
+	left: 50%;
+}
+
+#hard{
+	left: 75%;
+	width: 100px;
+}
+
+#question, #returnUI{
+	font-size: 25px;
+	position: relative;
+	top: 1%;
+	width: 20px;
+}
+
+#question:hover, #returnUI:hover, #hard:hover, #medium:hover, #easy:hover{
+	transition: 0.5s;
+	color: white;
+	cursor: pointer;
+}
+
+
+#timeTitle{
+	font-size: 25px;
+	position: absolute;
+	top: 3%;
+	left: 10%;
+}
+
+#minute{
+	font-size: 25px;
+	position: absolute;
+	top: 8%;
+	left: 10%;
+}
+
+#sekunde{
+	font-size: 25px;
+	position: absolute;
+	top: 8%;
+	left: 30%;
+}
+
+#pointsTitle{
+	font-size: 25px;
+	position: absolute;
+	top: 16%;
+	left: 10%;
+}
+
+#tocke{
+	font-size: 25px;
+	position: absolute;
+	top: 21%;
+	left: 20%;
+}
+
+#soundOn{
+	position: absolute;
+	bottom: 5%;
+	left: 15%;
+}
+
+#soundOff{
+	position: absolute;
+	bottom: 5%;
+	left: 60%;
+}
+
+#bestTime{
+	font-size: 25px;
+	position: absolute;
+	top: 29%;
+	left: 10%;
+}
+
+#bestMinutes{
+	font-size: 25px;
+	position: absolute;
+	top: 34%;
+	left: 10%;
+}
+
+#bestSeconds{
+	font-size: 25px;
+	position: absolute;
+	top: 34%;
+	left: 30%;
+}
+
+
+#tutorialScreen, #failScreen, #victoryScreen{
+	width: 662px;
+	height: 500px;
+	background-color: rgba(247, 235, 204, 0.8);
+	position: absolute;
+	border: solid 4px;
+	border-color: rgba(113, 55, 33, 0.9);;
+}
+
+#tutorial{
+	margin: 0;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-size: 40px;
+}
+
+#fail{
+	margin: 0;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: Caesar Dressing;
+	font-size: 40px;
+}
+#victory{
+	margin: 0;
+	position: absolute;
+	top: 20%;
+	left: 48%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-family: Caesar Dressing;
+	font-size: 40px;
+}
+
+#fail{
+	top: 45%;
+}
+
+.txt{
+	width: 450px;
+	margin: 0;
+	position: relative;
+	top: 30%;
+	left: 50%;
+	-ms- transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+}
+
+
+#yourTime, #yourPoints{
+	left: 70%;
+}
+
+
+#minutes, #seconds{
+	position: absolute;
+	left: 55%;
+	width: 50px;
+}
+
+#points{
+	position: absolute;
+	left: 58%;
+	width: 50px;
+}
+
+#seconds{
+	left: 59%;
+}
+
+#yourTime, #minutes, #seconds{
+	top: 36%;
+}
+#yourPoints{
+	top: 38.5%;
+}
+
+#points{
+	top: 43%;
+}
+
+
+#returnUI{
+	position: absolute;
+	top: 94%;
+	left: 2%;
+}
