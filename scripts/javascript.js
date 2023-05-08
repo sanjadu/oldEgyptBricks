@@ -122,6 +122,8 @@ function drawIt(){
 	}
 	
 	function draw(){
+		secMin();
+		
 		clear();
 		circle(x, y, 15);
 		
@@ -182,7 +184,8 @@ function drawIt(){
 			victory.removeAttribute("hidden");
 			audio.muted=true;
 			mainUI.setAttribute("hidden", "hidden");
-			//bestTime();
+			bestTime();
+			secMin();
 			clearInterval(myTimer);	
 		}
 			
@@ -233,54 +236,76 @@ function drawIt(){
 		//za premikanje zogice
 		x += dx;
 		y += dy;
-
 	}
 	
-	/*function bestTime(){	
+	function secMin(){
 		if(diff == 1){
-			if(parseInt(minuteEnd.innerHTML) == 0 && parseInt(sekundeEnd.innerHTML) == 0){
-				localStorage.setItem("seconds", sekundeEnd.innerHTML);
-				localStorage.setItem("minutes", minuteEnd.innerHTML);
-			}
-			if(parseInt(minuteEnd.innerHTML) <= parseInt(localStorage.getItem("minutes"))){
-				if(parseInt(sekundeEnd.innerHTML) < parseInt(localStorage.getItem("seconds"))){
-					localStorage.setItem("seconds", sekundeEnd.innerHTML);
-					localStorage.setItem("minutes", minuteEnd.innerHTML);
-				}
-			}
-			sekundeBest.innerHTML = localStorage.getItem("seconds");
-			minuteBest.innerHTML = localStorage.getItem("minutes");
-		}		
+			sekundeBest.innerHTML=bestSekunde;
+			minuteBest.innerHTML=bestMinute;
+		}
 		if(diff == 2){
-			if(parseInt(minuteEnd.innerHTML) == 0 && parseInt(sekundeEnd.innerHTML) == 0){
-				localStorage.setItem("secondsMedium", sekundeEnd.innerHTML);
-				localStorage.setItem("minutesMedium", minuteEnd.innerHTML);
-			}
-			if(parseInt(minuteEnd.innerHTML) <= parseInt(localStorage.getItem("minutesMedium"))){
-				if(parseInt(sekundeEnd.innerHTML) < parseInt(localStorage.getItem("secondsMedium"))){
-					localStorage.setItem("secondsMedium", sekundeEnd.innerHTML);
-					localStorage.setItem("minutesMedium", minuteEnd.innerHTML);
-				}
-			}
-			sekundeBest.innerHTML = localStorage.getItem("secondsMedium");
-			minuteBest.innerHTML = localStorage.getItem("minutesMedium");
+			sekundeBest.innerHTML=bestSecMed;
+			minuteBest.innerHTML=bestMinMed;
 		}
 		if(diff == 3){
-			if(parseInt(minuteEnd.innerHTML) == 0 && parseInt(sekundeEnd.innerHTML) == 0){
-				localStorage.setItem("secondsHard", sekundeEnd.innerHTML);
-				localStorage.setItem("minutesHard", minuteEnd.innerHTML);
+			sekundeBest.innerHTML=bestSecHard;
+			minuteBest.innerHTML=bestMinHard;
+		}
+	}
+
+	
+	var bestSekunde = JSON.parse(localStorage.getItem("seconds"));
+	var bestMinute = JSON.parse(localStorage.getItem("minutes"));
+	var bestSecMed = JSON.parse(localStorage.getItem("secondsMedium"));
+	var bestMinMed = JSON.parse(localStorage.getItem("minutesMedium"));
+	var bestSecHard = JSON.parse(localStorage.getItem("secondsHard"));
+	var bestMinHard = JSON.parse(localStorage.getItem("minutesHard"));
+	
+	function bestTime(){	
+		if(diff == 1){
+			if(localStorage.getItem("second")===null || localStorage.getItem("minutes")===null){
+				localStorage.setItem("seconds", JSON.stringify(sekundeEnd.innerHTML));
+				localStorage.setItem("minutes", JSON.stringify(minuteEnd.innerHTML));
 			}
-			if(parseInt(minuteEnd.innerHTML) <= parseInt(localStorage.getItem("minutesHard"))){
-				if(parseInt(sekundeEnd.innerHTML) < parseInt(localStorage.getItem("secondsHard"))){
-					localStorage.setItem("secondsHard", sekundeEnd.innerHTML);
-					localStorage.setItem("minutesHard", minuteEnd.innerHTML);
+			if(parseInt(minuteEnd.innerHTML) <= parseInt(JSON.parse(localStorage.getItem("minutes")))){
+				if(parseInt(sekundeEnd.innerHTML) < parseInt(JSON.parse(localStorage.getItem("seconds")))){
+					localStorage.setItem("seconds", JSON.stringify(sekundeEnd.innerHTML));
+					localStorage.setItem("minutes", JSON.stringify(minuteEnd.innerHTML));
 				}
 			}
-			sekundeBest.innerHTML = localStorage.getItem("secondsHard");
-			minuteBest.innerHTML = localStorage.getItem("minutesHard");
+			bestSekunde = JSON.parse(localStorage.getItem("seconds"));
+			bestMinute = JSON.parse(localStorage.getItem("minutes"));
+		}		
+		if(diff == 2){
+			if(localStorage.getItem("secondsMedium")===null || localStorage.getItem("minutesMedium")===null){
+				localStorage.setItem("secondsMedium", JSON.stringify(sekundeEnd.innerHTML));
+				localStorage.setItem("minutesMedium", JSON.stringify(minuteEnd.innerHTML));
+			}
+			if(parseInt(minuteEnd.innerHTML) <= parseInt(JSON.parse(localStorage.getItem("minutesMedium")))){
+				if(parseInt(sekundeEnd.innerHTML) < parseInt(JSON.parse(localStorage.getItem("secondsMedium")))){
+					localStorage.setItem("secondsMedium", JSON.stringify(sekundeEnd.innerHTML));
+					localStorage.setItem("minutesMedium", JSON.stringify(minuteEnd.innerHTML));
+				}
+			}
+			bestSecMed = JSON.parse(localStorage.getItem("secondsMedium"));
+			bestMinMed = JSON.parse(localStorage.getItem("minutesMedium"));
+		}
+		if(diff == 3){
+			if(localStorage.getItem("secondsHard")===null || localStorage.getItem("minutesHard")===null){
+				localStorage.setItem("secondsHard", JSON.stringify(sekundeEnd.innerHTML));
+				localStorage.setItem("minutesHard", JSON.stringify(minuteEnd.innerHTML));
+			}
+			if(parseInt(minuteEnd.innerHTML) <= parseInt(JSON.parse(localStorage.getItem("minutesHard")))){
+				if(parseInt(sekundeEnd.innerHTML) < parseInt(JSON.parse(localStorage.getItem("secondsHard")))){
+					localStorage.setItem("secondsHard", JSON.stringify(sekundeEnd.innerHTML));
+					localStorage.setItem("minutesHard", JSON.stringify(minuteEnd.innerHTML));
+				}
+			}
+			bestSecHard = JSON.parse(localStorage.getItem("secondsHard"));
+			bestMinHard = JSON.parse(localStorage.getItem("minutesHard"));
 		}
 		
-	}*/
+	}
 	
 	/*nastavljanje leve in desne tipke*/
 	function onKeyDown(evt){
